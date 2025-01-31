@@ -1,0 +1,19 @@
+.logo-container img {
+  max-height: 10vh; /* Ajusta el tamaño máximo del logo */
+}
+
+.carousel-container {
+  max-height: 40vh; /* Ajusta el tamaño máximo del contenedor del Carousel */
+  overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+.cocktail-info-container {
+  max-width: 80%; /* Ajusta el tamaño máximo del contenedor de información del cocktail */
+  margin-top: 1rem; /* Ajusta el margen superior */
+}
+
+.serve-button-container {
+  max-width: 50%; /* Ajusta el tamaño máximo del botón de servir */
+  margin-top: 1rem; /* Ajusta el margen superior */
+  margin-bottom: 1rem; /* Ajusta el margen inferior */
+}

@@ -9,7 +9,6 @@ const AdminLogin: React.FC = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  // Usuario provisional
   const provisionalUser = {
     username: "Guido",
     password: "barzaruma",
@@ -20,13 +19,14 @@ const AdminLogin: React.FC = () => {
     setError("");
 
     try {
-      // Verifica el usuario provisional
-      if (username === provisionalUser.username && password === provisionalUser.password) {
+      if (
+        username === provisionalUser.username &&
+        password === provisionalUser.password
+      ) {
         navigate("/admin/dashboard");
         return;
       }
 
-      // Verifica con la base de datos (simulación de una API call)
       const response = await fetch("/admin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -37,10 +37,8 @@ const AdminLogin: React.FC = () => {
         throw new Error("Credenciales incorrectas");
       }
 
-      // Si la validación es exitosa, redirige al dashboard
       navigate("/admin/dashboard");
     } catch (err: unknown) {
-      // Valida que el error es una instancia de Error antes de acceder a sus propiedades
       if (err instanceof Error) {
         setError(err.message);
       } else {
@@ -54,14 +52,23 @@ const AdminLogin: React.FC = () => {
       <div className="w-full max-w-md bg-white shadow-lg rounded-2xl p-8">
         {/* Logo de la empresa */}
         <div className="flex justify-center mb-6">
-          <img src="/assets/barbox.png" alt="Logo de la empresa" className="w-32 h-auto" />
+          <img
+            src="/assets/barbox.png"
+            alt="Logo de la empresa"
+            className="w-32 h-auto"
+          />
         </div>
 
-        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Inicio de Sesión</h1>
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+          Inicio de Sesión
+        </h1>
 
         <form onSubmit={handleLogin}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="username"
+            >
               Usuario
             </label>
             <div className="flex items-center border rounded-lg px-3 py-2">
@@ -78,7 +85,10 @@ const AdminLogin: React.FC = () => {
             </div>
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="password"
+            >
               Contraseña
             </label>
             <div className="flex items-center border rounded-lg px-3 py-2">

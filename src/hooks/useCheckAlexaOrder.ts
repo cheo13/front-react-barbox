@@ -14,15 +14,12 @@ const useCheckAlexaOrder = ({
       if (isPaused.current) return; // No hacer la petición si está pausado
 
       try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_BASE_URL}/order`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/order`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
 
         if (!response.ok) {
           throw new Error("Error al obtener los datos de órdenes");

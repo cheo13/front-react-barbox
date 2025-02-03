@@ -1,5 +1,10 @@
-import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { useState, useCallback } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import WelcomeScreen from "./screens/WelcomeScreen";
 import CarouselScreen from "./screens/CarouselScreen";
 import DispensingScreen from "./screens/DispensingScreen";
@@ -24,10 +29,16 @@ const App = () => {
 
 // Pantallas del Cliente
 const ClientApp = () => {
-  const [screen, setScreen] = useState<"Welcome" | "Carousel" | "Dispensing">("Welcome");
+  const [screen, setScreen] = useState<"Welcome" | "Carousel" | "Dispensing">(
+    "Welcome"
+  );
+
+  const handleNavigateToDispensing = useCallback(() => {
+    setScreen("Dispensing");
+  }, []);
 
   useCheckAlexaOrder({
-    onNavigateToDispensing: () => setScreen("Dispensing"),
+    onNavigateToDispensing: handleNavigateToDispensing,
   });
 
   const handleServe = () => {
@@ -40,9 +51,15 @@ const ClientApp = () => {
 
   return (
     <>
-      {screen === "Welcome" && <WelcomeScreen onClick={() => setScreen("Carousel")} />}
-      {screen === "Carousel" && <CarouselScreen onSelectCocktail={handleServe} />}
-      {screen === "Dispensing" && <DispensingScreen onFinish={handleFinishDispensing} />}
+      {screen === "Welcome" && (
+        <WelcomeScreen onClick={() => setScreen("Carousel")} />
+      )}
+      {screen === "Carousel" && (
+        <CarouselScreen onSelectCocktail={handleServe} />
+      )}
+      {screen === "Dispensing" && (
+        <DispensingScreen onFinish={handleFinishDispensing} />
+      )}
     </>
   );
 };
@@ -51,10 +68,12 @@ const ClientApp = () => {
 const AdminApp = () => {
   return (
     <Routes>
-      <Route path="/" element={<AdminLogin />} /> {/* Página de login por defecto */}
+      <Route path="/" element={<AdminLogin />} />{" "}
+      {/* Página de login por defecto */}
       <Route path="dashboard" element={<AdminDashboard />} />
       <Route path="reports" element={<AdminReports />} />
-      <Route path="*" element={<Navigate to="/admin" />} /> {/* Redirección si no existe */}
+      <Route path="*" element={<Navigate to="/admin" />} />{" "}
+      {/* Redirección si no existe */}
     </Routes>
   );
 };

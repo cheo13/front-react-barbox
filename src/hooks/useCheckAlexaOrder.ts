@@ -53,7 +53,7 @@ const useCheckAlexaOrder = ({
     return () => {
       if (intervalId) clearInterval(intervalId);
     };
-  }, [onNavigateToDispensing]);
+  }, []);
 
   return null;
 };

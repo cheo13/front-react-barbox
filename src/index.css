@@ -108,3 +108,17 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px; /* Grosor mínimo */
+  right: 100vh; /* Mueve la barra hacia la derecha */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Invisible */
+  border-radius: 10px;
+}
+
+.scrollbar-thin:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0); /* Visible solo al pasar el mouse */
+}

@@ -4,7 +4,9 @@ const ServeButton = ({
   onSelectCocktail,
   selected,
 }: {
-  onSelectCocktail: (image: { id: number; name: string; image: string } | null) => void;
+  onSelectCocktail: (
+    image: { id: number; name: string; image: string } | null
+  ) => void;
   selected: { id: number; name: string; image: string } | null;
 }) => {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -19,13 +21,16 @@ const ServeButton = ({
     console.log("drinkId:", JSON.stringify(payload));
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/order`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/order`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -47,7 +52,7 @@ const ServeButton = ({
       <button
         onClick={handleServe}
         disabled={!selected || isDisabled}
-        className="bg-gray-400 text-black text-sm py-4 px-10 rounded-full disabled:opacity-50 hover:bg-gray-300"
+        className="bg-gray-400 text-black text-lg py-4 px-10 rounded-full disabled:opacity-50 hover:bg-gray-300"
       >
         SERVIR
       </button>

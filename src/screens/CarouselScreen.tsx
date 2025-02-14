@@ -4,47 +4,47 @@ import CocktailInfo from "../components/CocktailInfo";
 import Logo from "../components/Logo";
 import ServeButton from "../components/ServeButton";
 
-const images = [
+export const images = [
   {
     id: 1,
     name: "Cuba Libre",
-    ingredients: "Ron, Cola, Jugo de limón",
+    ingredients: "Ron 2,5 oz - Cola 2 oz - Jugo de limón 2 oz",
     image: "/assets/cubalibre.webp",
   },
   {
     id: 2,
     name: "Skill Driver",
-    ingredients: "Vodka, Jugo de naranja, Granadina",
+    ingredients: "Vodka 3,5 oz - Jugo de naranja 3,5 oz - Granadina 0,5 oz",
     image: "/assets/screwdriver.webp",
   },
   {
     id: 3,
     name: "Mojito",
-    ingredients: "Ron, Soda, Jugo de limón",
+    ingredients: "Ron2,5 oz - Soda 2,5 oz - Jugo de limón 2,5 oz",
     image: "/assets/mojito.webp",
   },
   {
     id: 4,
     name: "Caipirinha",
-    ingredients: "Aguardiente, Soda, Jugo de limón",
+    ingredients: "Aguardiente 2,5 oz - Soda 2,5 oz - Jugo de limón 2,5 oz",
     image: "/assets/caipirinha.webp",
   },
   {
     id: 5,
     name: "Caipiroska",
-    ingredients: "Vodka, Soda, Jugo de limón",
+    ingredients: "Vodka 2,5 oz - Soda 2,5 oz - Jugo de limón 2,5 oz",
     image: "/assets/caipiroska.webp",
   },
   {
     id: 6,
     name: "Tequila Molta",
-    ingredients: "Tequila, Jugo de Naranja, Granadina",
+    ingredients: "Tequila 3,5 oz - Jugo de Naranja 3,5 oz - Granadina 0,5 oz",
     image: "/assets/tequilamolta.jpeg",
   },
   {
     id: 7,
     name: "Tequila Sunrise",
-    ingredients: "Tequila, Jugo de Limón, Granadina",
+    ingredients: "Tequila 3,5 oz - Jugo de Limón 3,5 oz - Granadina 0,5 oz",
     image: "/assets/tequilasunrise.webp",
   },
 ];

@@ -6,7 +6,7 @@ const CocktailInfo = ({
   if (!selected) return null;
 
   return (
-    <div className="mt-6 sm:mt-8 lg:mt-8 w-full flex justify-center z-20">
+    <div className="mt-6 sm:mt-8 lg:mt-4 w-full flex justify-center z-20">
       <div
         className="bg-gray-600 text-white text-xs sm:text-sm px-4 py-2 rounded-lg shadow-md max-w-sm text-center transform hover:scale-105 transition-all duration-300"
         style={{

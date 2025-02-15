@@ -47,7 +47,7 @@ const ServeButton = ({
   };
 
   return (
-    <div className="mt-4 sm:mt-6 lg:mt-8 flex justify-center mb-2 sm:mb-4 lg:mb-6">
+    <div className="mt-2 sm:mt-4 lg:mt-6 flex justify-center mb-1 sm:mb-0 lg:mb-9">
       {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
       <button
         onClick={handleServe}

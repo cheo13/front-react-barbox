@@ -40,7 +40,7 @@ const useCheckAlexaOrder = ({
           if (intervalId) clearInterval(intervalId);
           setTimeout(() => {
             isPaused.current = false;
-            intervalId = setInterval(fetchAlexaOrder, 1000);
+            intervalId = setInterval(fetchAlexaOrder, 1000000);
           }, 20000);
         }
       } catch (error) {
@@ -48,7 +48,7 @@ const useCheckAlexaOrder = ({
       }
     };
 
-    intervalId = setInterval(fetchAlexaOrder, 1000);
+    intervalId = setInterval(fetchAlexaOrder, 1000000);
 
     return () => {
       if (intervalId) clearInterval(intervalId);

@@ -74,7 +74,7 @@ const CarouselScreen = ({
       </div>
       <div
         className="flex flex-col items-center w-full flex-grow"
-        style={{ maxHeight: "30vh" }}
+        style={{ maxHeight: "40vh" }}
       >
         <Carousel
           selected={selected}
@@ -82,10 +82,10 @@ const CarouselScreen = ({
           images={images}
         />
       </div>
-      <div className="flex flex-col items-center w-full mb-9">
+      <div className="flex flex-col items-center w-full mb-6">
         <CocktailInfo selected={selected} />
       </div>
-      <div className="flex flex-col items-center w-full mt-2 mb-9">
+      <div className="flex flex-col items-center w-full mt-0 mb-9">
         <ServeButton onSelectCocktail={onSelectCocktail} selected={selected} />
       </div>
 
